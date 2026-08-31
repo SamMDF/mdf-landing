@@ -97,6 +97,27 @@ por lo que se ve en cada captura:
 
 Confirmar con César antes de publicar.
 
+## Estructura del código
+
+Sin framework ni build. Tres archivos:
+
+- **`index.html`** — todas las secciones y su copy, salvo dos contenedores vacíos
+  (`#slides` y `#work`) que rellena el JS.
+- **`css/styles.css`** — tokens en `:root`, sistema de formas (`.sh-*`), fondos por
+  bloque (`.bg-*`), animaciones ligadas a clases `.on`.
+- **`js/main.js`** — vanilla, sin dependencias. Piezas independientes: carrusel del
+  hero, palabra rotante (`#rot`), revelado por scroll del statement (`#stmt .ln`),
+  compresión del header. Todo respeta `prefers-reduced-motion`.
+
+El helper `pic(slug, alt, lazy)` genera el `<picture>` responsive (webp+jpg, 700/1400).
+Dos arrays son la única fuente de verdad de qué clientes se muestran:
+
+- `SLIDES` (5 entradas, incluye `laura`) → diapositivas del hero.
+- `W` (4 entradas, sin `laura`) → tarjetas del portafolio.
+
+Para añadir o quitar un cliente se edita el array, no el HTML. Si cambian los slugs de
+`img/`, hay que actualizarlos aquí.
+
 ## Pendientes conocidos
 
 - **Derechos de imagen.** Las cinco fotos son capturas de pantalla y en cuatro

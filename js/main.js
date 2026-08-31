@@ -48,8 +48,8 @@ const hd=document.getElementById('hd');
 addEventListener('scroll',()=>hd.classList.toggle('shrunk', scrollY>40),{passive:true});
 
 /* portafolio */
-const W=[["banregio","Banregio","Educación financiera"],["goyn","GOYN CDMX","CV sin sesgos"],
-         ["pilot","Pilot","Serie de liderazgo"],["ocho20","8020","Video de producto"]];
-document.getElementById('work').innerHTML=W.map(([k,n,s])=>
- `<a class="w" href="#contacto">${pic(k,`${n} — ${s}`,true)}
-   <span class="tag">${n}<em>${s}</em></span></a>`).join('');
+const W=[["banregio","Cursos Autodirigidos"],["ocho20","Casos de Estudio"],
+         ["pilot","Series de Liderazgo"],["goyn","Productos Gamificados"]];
+document.getElementById('work').innerHTML=W.map(([k,n])=>
+ `<a class="w" href="#contacto">${pic(k,n,true)}
+   <span class="tag">${n}</span></a>`).join('');
