@@ -57,15 +57,21 @@ Negro Nike (hero) → Blanco (dos rutas) → Cerámica (oferta) → Tinta (porta
 
 Si insertas una sección, recalcula la secuencia completa.
 
-### Logotipo
+### Logotipo e isotipo
 
-Se usa `img/logo-mdf.png`: el lockup apilado donde **la O final de FUTURO es la
-marca**, en versión blanco + púrpura para fondo oscuro. No es el isotipo suelto.
+Dos assets, dos usos distintos:
 
-- Mínimo 140 px de ancho. Header 172 px, comprimido 142 px, footer 168 px.
-- Esta versión solo funciona sobre fondo oscuro. Si el header pasa a fondo claro
-  hay que cambiar al lockup claro (en la skill), donde "MAESTROS DEL" va en Tinta.
-- La O no es una letra. Nunca reconstruyas el wordmark tipeando en Sofia Pro.
+- **`img/logo-mdf.png`** — lockup apilado (wordmark), blanco + púrpura para fondo
+  oscuro, donde **la O final de FUTURO es la marca**. Va en el header.
+  - Mínimo 140 px de ancho. Header 172 px, comprimido 142 px.
+  - Solo funciona sobre fondo oscuro. Si el header pasa a fondo claro hay que
+    cambiar al lockup claro (en la skill), donde "MAESTROS DEL" va en Tinta.
+  - La O no es una letra. Nunca reconstruyas el wordmark tipeando en Sofia Pro.
+- **`img/isotipo-mdf.png`** — el isotipo suelto (anillos concéntricos con vástago y
+  sonrisa), versión Cerámica, copiado de `mdf-design-system/assets/isotipo-ceramica.png`.
+  Va en el lado derecho del hero (`.sculpt`). Proporción 558:682, **no lo encajes en
+  un cuadrado**. Es ráster de resolución limitada; si aparece el vector original,
+  sustitúyelo. No lo redibujes a mano.
 
 ### Tema único, a propósito
 
