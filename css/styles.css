@@ -36,6 +36,7 @@ header.shrunk .brand img{width:142px}
   border-radius:var(--r-full);padding:13px 26px;font:600 14px var(--font);letter-spacing:.01em;
   transition:transform .18s ease,filter .18s ease}
 .pill:hover{transform:translateY(-2px);filter:brightness(1.06)}
+header .pill{font-size:17px}
 .pill-purpura{background:var(--purpura);color:var(--tinta)}
 .pill-tinta{background:var(--tinta);color:var(--blanco)}
 .pill-blanco{background:var(--blanco);color:var(--tinta)}
@@ -110,7 +111,7 @@ h3.big{font-weight:700;text-transform:uppercase;letter-spacing:-.03em;line-heigh
 .card .ico .sh-arc{width:28px;height:14px;border-width:5px}
 .card .n{font:500 11px var(--mono);letter-spacing:.18em;color:var(--purpura)}
 .card h5{font-weight:700;font-size:26px;line-height:1.12;letter-spacing:-.02em;margin:0}
-.card p{font-size:15px;line-height:1.6;color:var(--lavanda);margin:0}
+.card p{font-size:18px;line-height:1.6;color:var(--lavanda);margin:0}
 .card .who{font-size:13px;line-height:1.5;color:var(--ceramica);border-top:1px solid var(--indigo);
   padding-top:var(--s4);margin-top:auto}
 .card .pill{align-self:flex-start;margin-top:var(--s4)}
