@@ -107,13 +107,18 @@ Sin framework ni build. Tres archivos:
   bloque (`.bg-*`), animaciones ligadas a clases `.on`.
 - **`js/main.js`** — vanilla, sin dependencias. Piezas independientes: carrusel del
   hero, palabra rotante (`#rot`), revelado por scroll del statement (`#stmt .ln`),
-  compresión del header. Todo respeta `prefers-reduced-motion`.
+  compresión del header, y el lightbox del portafolio. Todo respeta
+  `prefers-reduced-motion`.
 
 El helper `pic(slug, alt, lazy)` genera el `<picture>` responsive (webp+jpg, 700/1400).
 Dos arrays son la única fuente de verdad de qué clientes se muestran:
 
 - `SLIDES` (5 entradas, incluye `laura`) → diapositivas del hero.
-- `W` (4 entradas, sin `laura`) → tarjetas del portafolio.
+- `W` (4 entradas, sin `laura`) → tarjetas del portafolio. Cada entrada es
+  `[slug, etiqueta, fuente]` donde `fuente` es `{vimeo:"<id>"}` (embed de
+  `player.vimeo.com`) o `{site:"<url>"}` (iframe de sitio). Al hacer clic, la tarjeta
+  abre esa fuente en un lightbox (`.lb`) inyectado en `<body>`; `.lb-frame.site` le da
+  más alto al iframe cuando es un sitio en vez de un video 16:9.
 
 Para añadir o quitar un cliente se edita el array, no el HTML. Si cambian los slugs de
 `img/`, hay que actualizarlos aquí.
@@ -123,8 +128,10 @@ Para añadir o quitar un cliente se edita el array, no el HTML. Si cambian los s
 - **Derechos de imagen.** Las cinco fotos son capturas de pantalla y en cuatro
   aparecen personas identificables. Confirmar derechos y conseguir los originales
   en buena resolución antes de publicar en un dominio público.
-- **Portafolio sin destino.** Las cuatro tarjetas enlazan a `#contacto`. Faltan
-  páginas de caso o un modal.
+- **Embeds de Vimeo sin verificar.** Tres tarjetas del portafolio apuntan a videos
+  de Vimeo por su ID (de links de *review*). Si la privacidad del video no permite
+  incrustar, el lightbox mostrará un error de Vimeo — hay que poner el video en
+  "se puede incrustar en cualquier sitio" o usar la URL de embed con su hash `?h=`.
 - **Contacto es un `mailto:`**, sin formulario. Expone el correo a scrapers.
 - **Favicon provisional**: usa el PNG del logotipo, no un ico/svg dedicado.
 

@@ -47,9 +47,35 @@ else lns.forEach(l=>l.classList.add('on'));
 const hd=document.getElementById('hd');
 addEventListener('scroll',()=>hd.classList.toggle('shrunk', scrollY>40),{passive:true});
 
-/* portafolio */
-const W=[["banregio","Cursos Autodirigidos"],["ocho20","Casos de Estudio"],
-         ["pilot","Series de Liderazgo"],["goyn","Productos Gamificados"]];
-document.getElementById('work').innerHTML=W.map(([k,n])=>
- `<a class="w" href="#contacto">${pic(k,n,true)}
+/* portafolio — cada tarjeta abre su contenido en un lightbox */
+const W=[
+  ["banregio","Cursos Autodirigidos", {vimeo:"1222870857"}],
+  ["ocho20",  "Casos de Estudio",     {vimeo:"1222872213"}],
+  ["pilot",   "Series de Liderazgo",  {vimeo:"1222870251"}],
+  ["goyn",    "Productos Gamificados",{site:"https://goyn-experiencia.vercel.app/"}],
+];
+document.getElementById('work').innerHTML=W.map(([k,n],i)=>
+ `<a class="w" href="#" data-i="${i}">${pic(k,n,true)}
    <span class="tag">${n}</span></a>`).join('');
+
+const lb=document.createElement('div');
+lb.className='lb'; lb.hidden=true;
+lb.innerHTML='<div class="lb-in"><button class="lb-x" aria-label="Cerrar">&times;</button>'+
+             '<div class="lb-frame" id="lbFrame"></div></div>';
+document.body.appendChild(lb);
+const lbFrame=lb.querySelector('#lbFrame');
+function openLb(src){
+  const url=src.vimeo
+    ? `https://player.vimeo.com/video/${src.vimeo}?title=0&byline=0&portrait=0`
+    : src.site;
+  lbFrame.className='lb-frame'+(src.site?' site':'');
+  lbFrame.innerHTML=`<iframe src="${url}" allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+  lb.hidden=false; document.documentElement.style.overflow='hidden';
+}
+function closeLb(){ lb.hidden=true; lbFrame.innerHTML=''; document.documentElement.style.overflow=''; }
+lb.addEventListener('click',e=>{ if(e.target===lb||e.target.closest('.lb-x')) closeLb(); });
+addEventListener('keydown',e=>{ if(e.key==='Escape'&&!lb.hidden) closeLb(); });
+document.querySelectorAll('#work .w').forEach(a=>a.addEventListener('click',e=>{
+  e.preventDefault(); openLb(W[+a.dataset.i][2]);
+}));
