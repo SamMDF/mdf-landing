@@ -5,30 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Maestros del Futuro — Contenido para crecer</title>
 <meta name="description" content="En Maestros del Futuro, creamos el contenido para que tu cliente vea el valor de tu producto y sí se use. Estrategia y producción: video, texto, cursos y sistemas gamificados.">
+<link rel="canonical" href="https://www.maestrosdelfuturo.com/">
+<link rel="alternate" hreflang="es" href="https://www.maestrosdelfuturo.com/">
+<link rel="alternate" hreflang="en" href="https://www.maestrosdelfuturo.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://www.maestrosdelfuturo.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Maestros del Futuro">
 <meta property="og:title" content="Maestros del Futuro — Contenido para crecer">
 <meta property="og:description" content="Creamos el contenido para que tu cliente vea el valor de tu producto y sí se use.">
-<meta property="og:image" content="img/goyn-1400.jpg">
-<meta property="og:type" content="website">
-<link rel="icon" type="image/png" href="img/isotipo-favicon.png">
+<meta property="og:url" content="https://www.maestrosdelfuturo.com/">
+<meta property="og:image" content="https://www.maestrosdelfuturo.com/img/goyn-1400.jpg">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maestros del Futuro — Contenido para crecer">
+<meta name="twitter:description" content="Creamos el contenido para que tu cliente vea el valor de tu producto y sí se use.">
+<meta name="twitter:image" content="https://www.maestrosdelfuturo.com/img/goyn-1400.jpg">
+<meta name="theme-color" content="#181239">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Sofia Pro real: fuera del CSP de Artifacts sí carga -->
 <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sofia-pro">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="/css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Maestros del Futuro",
+  "description": "Estrategia y producción de contenido —video, texto, cursos y sistemas gamificados— para que tu producto sí se use.",
+  "url": "https://www.maestrosdelfuturo.com/",
+  "logo": "https://www.maestrosdelfuturo.com/icon-512.png",
+  "image": "https://www.maestrosdelfuturo.com/img/goyn-1400.jpg",
+  "areaServed": ["MX", "US"],
+  "availableLanguage": ["es", "en"]
+}
+</script>
 </head>
 <body>
+<a class="skip" href="#hero-h1">Saltar al contenido</a>
 <header id="hd">
-  <a class="brand" href="#top"><img src="img/logo-mdf.png" alt="Maestros del Futuro"></a>
-  <a class="pill pill-purpura" href="#contacto">Hablemos</a>
+  <a class="brand" href="#top"><img src="/img/logo-mdf.png" alt="Maestros del Futuro" width="172" height="50"></a>
+  <div class="hd-r">
+    <a class="lang" href="/en/" hreflang="en" lang="en" aria-label="View this page in English">EN</a>
+    <a class="pill pill-purpura" href="#contacto">Hablemos</a>
+  </div>
 </header>
 
 <section class="hero" id="top">
   <div class="slides" id="slides"></div>
   <div class="scrim"></div>
-  <div class="sculpt"><img src="img/isotipo-mdf.png" alt=""></div>
+  <div class="sculpt"><img src="/img/isotipo-mdf.png" alt="" width="220" height="269"></div>
   <div class="hero-in">
-    <h1>Contenido<br>para <span class="rot" id="rot"></span></h1>
+    <h1 id="hero-h1">
+      <span class="sr-only">Contenido para crecer, conectar, decidir y crear.</span>
+      <span aria-hidden="true">Contenido<br>para <span class="rot" id="rot"></span></span>
+    </h1>
     <h2 class="sub">En Maestros del Futuro, creamos el contenido para que tu cliente vea el valor de tu producto y sí se use.</h2>
   </div>
 </section>
@@ -93,14 +129,16 @@
 <section class="block bg-blanco contact" id="contacto">
   <div class="inner">
     <h3 class="big">Crece,<br>Conecta,<br>Decide y Crea<br>con Nosotros</h3>
-    <a class="mailto" href="mailto:cesar@maestrosdelfuturo.com">cesar@maestrosdelfuturo.com
-      <i class="sh sh-arc" style="width:22px;height:11px;border-width:3px;color:var(--purpura)"></i></a>
+    <button class="mailto" id="bookCall" type="button">Agenda una llamada
+      <i class="sh sh-arc" style="width:22px;height:11px;border-width:3px;color:var(--purpura)"></i></button>
+    <p class="contact-alt">o escríbenos a <a data-email href="#" aria-label="Enviar correo"></a><noscript>cesar@maestrosdelfuturo.com</noscript></p>
   </div>
 </section>
 
 <footer>
   <span>Maestros del Futuro&reg; 2026</span>
+  <a href="/legal.html">Aviso legal</a>
 </footer>
-<script src="js/main.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
