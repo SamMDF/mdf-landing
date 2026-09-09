@@ -24,7 +24,7 @@ const T = {
     bookTitle: 'Agenda una llamada con Maestros del Futuro',
   },
   en: {
-    words: [['grow',3600],['decide',1500],['connect',1500],['create',1500]],
+    words: [['used',3600],['adopted',1500],['shared',1500],['finished',1500]],
     work: [
       ['banregio','Self-paced Courses', {vimeo:'1222870857'}],
       ['ocho20',  'Case Studies',       {vimeo:'1222872213'}],

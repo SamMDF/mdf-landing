@@ -41,9 +41,8 @@ viven en cada HTML. El toggle de idioma en el header navega a la página equival
 (`/` ↔ `/en/`, `/legal.html` ↔ `/en/legal.html`) y en móvil (<520px) se oculta el
 botón CTA del header para que quepa.
 
-Todas las URLs absolutas (canonical, hreflang, OG, sitemap, JSON-LD) asumen el
-dominio **`https://www.maestrosdelfuturo.com`** — cámbialo si el dominio de
-producción es otro.
+Todas las URLs absolutas (canonical, hreflang, OG, sitemap, JSON-LD) usan el
+dominio de producción **`https://www.maestrosdelfuturo.com`**.
 
 ## Sistema de diseño — leer esto antes de tocar nada visual
 
@@ -166,21 +165,18 @@ Para añadir/quitar un cliente o cambiar Calendly se edita `main.js`, no el HTML
 
 ## Pendientes conocidos
 
-- **Copy EN pendiente de revisión.** Toda la traducción de `en/` la redactó Claude
-  como inglés B2B; César aún no la aprueba. Trátala como borrador.
-- **Dominio de producción por confirmar.** Las URLs absolutas asumen
-  `https://www.maestrosdelfuturo.com`. Si es otro, actualizar canonical/hreflang/OG
-  en las 4 páginas, `sitemap.xml`, `robots.txt` y el JSON-LD.
+- **Copy EN — visto bueno de tono.** La versión de `en/` la redactó y pulió Claude
+  como inglés B2B (no traducción literal); falta que César la lea una vez para el
+  tono. El fondo del mensaje es suyo.
 - **Páginas legales por revisar.** `legal.html` y `en/legal.html` llevan texto
   estándar redactado por Claude, no revisado por abogado. Asumen jurisdicción
   **México** en ambos idiomas — confirmar. Llevan un aviso visible y `noindex`.
-- **Embeds de Vimeo sin verificar.** Tres tarjetas del portafolio apuntan a videos
-  de Vimeo por su ID (de links de *review*). Si la privacidad del video no permite
-  incrustar, el lightbox mostrará un error de Vimeo — hay que poner el video en
-  "se puede incrustar en cualquier sitio" o usar la URL de embed con su hash `?h=`.
 - **Fuentes desde CDN de terceros.** Sofia Pro se sirve desde `fonts.cdnfonts.com`.
   Para producción real conviene auto-hospedarla con licencia comprada.
 - Sin analítica ni banner de cookies (decisión deliberada, septiembre 2026).
+
+Confirmado (sept 2026): dominio de producción `https://www.maestrosdelfuturo.com`;
+los tres embeds de Vimeo del portafolio sí se reproducen en el lightbox.
 
 ## Cosas que parecen bugs y no lo son
 
