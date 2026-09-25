@@ -42,7 +42,7 @@ viven en cada HTML. El toggle de idioma en el header navega a la página equival
 botón CTA del header para que quepa.
 
 Todas las URLs absolutas (canonical, hreflang, OG, sitemap, JSON-LD) usan el
-dominio de producción **`https://www.maestrosdelfuturo.com`**.
+dominio de producción **`https://servicios.maestrosdelfuturo.com`**.
 
 ## Sistema de diseño — leer esto antes de tocar nada visual
 
@@ -175,7 +175,7 @@ Para añadir/quitar un cliente o cambiar Calendly se edita `main.js`, no el HTML
   Para producción real conviene auto-hospedarla con licencia comprada.
 - Sin analítica ni banner de cookies (decisión deliberada, septiembre 2026).
 
-Confirmado (sept 2026): dominio de producción `https://www.maestrosdelfuturo.com`;
+Confirmado (sept 2026): dominio de producción `https://servicios.maestrosdelfuturo.com`;
 los tres embeds de Vimeo del portafolio sí se reproducen en el lightbox.
 
 ## Cosas que parecen bugs y no lo son

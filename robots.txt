@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.maestrosdelfuturo.com/sitemap.xml
+Sitemap: https://servicios.maestrosdelfuturo.com/sitemap.xml
