@@ -240,6 +240,7 @@ body.interior{background:var(--blanco)}
   border:1px solid var(--ceramica);background:var(--tinta)}
 .post-fig figcaption{font:500 12px/1.6 var(--mono);letter-spacing:.06em;color:var(--bruma);margin-top:var(--s3)}
 .post-close{margin-top:var(--s8)!important;padding-top:var(--s6);border-top:1px solid var(--ceramica)}
+.post p.post-punch{font-size:clamp(24px,3vw,32px);line-height:1.25;letter-spacing:-.01em}
 .post-cta h2.big{font-size:clamp(30px,5vw,60px);max-width:18ch}
 .post-cta .mailto{border-bottom-color:var(--tinta)}
 .post-cta .mailto:hover{border-bottom-color:var(--blanco)}
