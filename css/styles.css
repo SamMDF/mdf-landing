@@ -241,6 +241,12 @@ body.interior{background:var(--blanco)}
 .post-fig figcaption{font:500 12px/1.6 var(--mono);letter-spacing:.06em;color:var(--bruma);margin-top:var(--s3)}
 .post-close{margin-top:var(--s8)!important;padding-top:var(--s6);border-top:1px solid var(--ceramica)}
 .post p.post-punch{font-size:clamp(24px,3vw,32px);line-height:1.25;letter-spacing:-.01em}
+.post-related{margin-top:var(--s8);padding-top:var(--s6);border-top:1px solid var(--ceramica)}
+.post-related a{display:flex;flex-direction:column;gap:var(--s2);text-decoration:none;
+  font-weight:700;font-size:clamp(22px,2.6vw,28px);line-height:1.2;letter-spacing:-.02em;color:var(--tinta)}
+.post-related a>span:first-child{border-bottom:3px solid var(--purpura);align-self:flex-start;padding-bottom:4px}
+.post-related a:hover>span:first-child{border-bottom-color:var(--tinta)}
+.post-related-by{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--bruma)}
 .post-cta h2.big{font-size:clamp(30px,5vw,60px);max-width:18ch}
 .post-cta .mailto{border-bottom-color:var(--tinta)}
 .post-cta .mailto:hover{border-bottom-color:var(--blanco)}
