@@ -24,7 +24,10 @@ index.html         ES — raíz, mercado principal
 en/index.html      EN — traducción B2B (copy pendiente de revisión de César)
 legal.html         ES — aviso legal combinado (privacidad + términos + accesibilidad)
 en/legal.html      EN — íd.
-css/styles.css     compartido por las 4 páginas
+blog/index.html    ES — listado del blog (solo español)
+blog/<slug>/index.html   ES — un artículo por carpeta → URL limpia /blog/<slug>
+img/blog/          imágenes (JPEG 800/1600), video y OG 1200×630 de los artículos
+css/styles.css     compartido por todas las páginas
 js/main.js         compartido; se adapta al idioma por `document.documentElement.lang`
 img/               fotos + logo + isotipo (+ isotipo-favicon.png, fuente de los favicons)
 favicon-32.png · icon-192.png · icon-512.png · apple-touch-icon.png   generados con sips
@@ -43,6 +46,24 @@ botón CTA del header para que quepa.
 
 Todas las URLs absolutas (canonical, hreflang, OG, sitemap, JSON-LD) usan el
 dominio de producción **`https://servicios.maestrosdelfuturo.com`**.
+
+### Blog
+
+Solo en español (el toggle de idioma no aparece en las páginas del blog). Usa el
+patrón de página interior (`body.interior` + `header.solid`) y estilos `.post*` /
+`.blog-head` en `styles.css`. Ritmo cromático de un artículo: header Tinta →
+artículo Blanco → CTA Cerámica (`#bookCall` a Calendly + correo) → footer Negro.
+
+Para publicar un artículo nuevo:
+1. Copiar `blog/deja-de-competir-por-atencion/` a `blog/<slug>/` y reemplazar
+   contenido, `<title>`, metas, canonical, OG y el JSON-LD `BlogPosting`.
+2. Medios en `img/blog/`: JPEG a 800 y 1600 px (`sips`; esta Mac no exporta WebP),
+   OG de 1200×630. Video H.264 con `avconvert -p Preset960x540` (720p salía igual
+   de pesado que el original) y `preload="none"` + póster.
+3. Añadir la tarjeta arriba en `blog/index.html` y la URL en `sitemap.xml`.
+
+El copy de los artículos es de César/Sam y se respeta tal cual; las capturas de
+terceros (U.S. Bank, BIT) se citan en el `figcaption`.
 
 ## Sistema de diseño — leer esto antes de tocar nada visual
 
