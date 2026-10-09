@@ -24,8 +24,9 @@ index.html         ES — raíz, mercado principal
 en/index.html      EN — traducción B2B (copy pendiente de revisión de César)
 legal.html         ES — aviso legal combinado (privacidad + términos + accesibilidad)
 en/legal.html      EN — íd.
-blog/index.html    ES — listado del blog (solo español)
+blog/index.html    ES — listado del blog          · en/blog/index.html  EN
 blog/<slug>/index.html   ES — un artículo por carpeta → URL limpia /blog/<slug>
+en/blog/<slug>/index.html EN — traducción (slug propio en inglés)
 img/blog/          imágenes (JPEG 800/1600), video y OG 1200×630 de los artículos
 css/styles.css     compartido por todas las páginas
 js/main.js         compartido; se adapta al idioma por `document.documentElement.lang`
@@ -49,18 +50,33 @@ dominio de producción **`https://servicios.maestrosdelfuturo.com`**.
 
 ### Blog
 
-Solo en español (el toggle de idioma no aparece en las páginas del blog). Usa el
+Bilingüe. Cada artículo ES tiene su par EN con slug propio, enlazados con `hreflang`,
+el toggle ES/EN del header, `translationOfWork` en el JSON-LD y alternates en el
+sitemap. Pares actuales:
+
+| ES | EN | Autor |
+|---|---|---|
+| `/blog/deja-de-competir-por-atencion` | `/en/blog/stop-competing-for-attention` | Sam Casanova |
+| `/blog/no-falta-informacion-falta-guia` | `/en/blog/what-is-missing-is-guidance` | César Cossío |
+
+Cada artículo lleva autor (persona, no la marca) en la línea de meta, en la tarjeta
+del listado y como `Person` en el JSON-LD. Usa el
 patrón de página interior (`body.interior` + `header.solid`) y estilos `.post*` /
 `.blog-head` en `styles.css`. Ritmo cromático de un artículo: header Tinta →
 artículo Blanco → CTA Cerámica (`#bookCall` a Calendly + correo) → footer Negro.
 
 Para publicar un artículo nuevo:
-1. Copiar `blog/deja-de-competir-por-atencion/` a `blog/<slug>/` y reemplazar
-   contenido, `<title>`, metas, canonical, OG y el JSON-LD `BlogPosting`.
+1. Copiar un artículo existente (ES y EN) a sus nuevas carpetas y reemplazar
+   contenido, autor, `<title>`, metas, canonical, hreflang, el href del toggle, OG
+   y el JSON-LD `BlogPosting`.
 2. Medios en `img/blog/`: JPEG a 800 y 1600 px (`sips`; esta Mac no exporta WebP),
    OG de 1200×630. Video H.264 con `avconvert -p Preset960x540` (720p salía igual
    de pesado que el original) y `preload="none"` + póster.
-3. Añadir la tarjeta arriba en `blog/index.html` y la URL en `sitemap.xml`.
+3. Añadir la tarjeta arriba en `blog/index.html` y `en/blog/index.html`, y el par
+   de URLs (con alternates) en `sitemap.xml`.
+
+La vista previa al compartir (OG) solo usa material propio: si el artículo no tiene
+uno, se usa `img/og-es.png` / `img/og-en.png`, nunca una captura de terceros.
 
 El copy de los artículos es de César/Sam y se respeta tal cual; las capturas de
 terceros (U.S. Bank, BIT) se citan en el `figcaption`.
