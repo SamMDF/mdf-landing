@@ -63,7 +63,7 @@ Cada artículo lleva autor (persona, no la marca) en la línea de meta, en la ta
 del listado y como `Person` en el JSON-LD. Usa el
 patrón de página interior (`body.interior` + `header.solid`) y estilos `.post*` /
 `.blog-head` en `styles.css`. Ritmo cromático de un artículo: header Tinta →
-artículo Blanco → CTA Cerámica (`#bookCall` a Calendly + correo) → footer Negro.
+artículo Blanco → CTA Cerámica (`.js-book` a Calendly + correo) → footer Negro.
 
 Para publicar un artículo nuevo:
 1. Copiar un artículo existente (ES y EN) a sus nuevas carpetas y reemplazar
@@ -196,9 +196,32 @@ rutas `/img/…`). La fuente de verdad de qué se muestra vive en el objeto `T` 
   `[slug, etiqueta, fuente]` donde `fuente` es `{vimeo:"<id>"}` o `{site:"<url>"}`.
   La tarjeta es un `<a>` real (href al link de review de Vimeo o al sitio, abre en
   pestaña nueva sin JS); con JS, `preventDefault()` y abre la fuente en el lightbox.
-- El botón `#bookCall` de la sección contacto abre `CALENDLY` en el lightbox.
+- Todo CTA con clase `.js-book` (hero, contacto, cierre de artículos) es un `<a>` real a
+  Calendly que funciona sin JS; con JS, `main.js` le pone `href = CALENDLY` y lo abre en
+  el lightbox (con `aria-label` propio de agenda).
 
 Para añadir/quitar un cliente o cambiar Calendly se edita `main.js`, no el HTML.
+
+## Reglas de implementación (auditoría Impeccable, octubre 2026)
+
+- **Escala tipográfica del design system** (12/14/16/20/24/32/40/48/56/72/96; los
+  `clamp()` arrancan y terminan en pasos de la escala). Excepciones deliberadas, pedidas
+  por el usuario: botón del header 17px, texto de "dos rutas" 19px, texto de tarjetas de
+  oferta 18px, cuerpo de artículos 18px, H1 del hero hasta 140px y subtítulo del hero.
+- **JetBrains Mono solo en etiquetas cortas** (nav, toggle, meta de artículo, números,
+  footer). Nunca en frases: pies de foto y avisos van en Sofia Pro.
+- **Esquinas rectas** en bloques y medios (tarjetas, imágenes, video). Lo redondo es solo
+  pastillas (`--r-full`) y las formas del isotipo.
+- **Sin barras laterales de acento.** Para marcar una entradilla se usa la "sonrisa"
+  (arco del isotipo) como `::before`; las citas van con fondo `--superficie`.
+- **Foco:** anillo Topacio sobre fondos oscuros, Tinta sobre Blanco/Cerámica (Topacio
+  sobre blanco da 1.7:1). Las tarjetas Tinta dentro de Cerámica vuelven a Topacio.
+- **Outline de encabezados:** h1 → h2 (secciones, `.big`) → h3 (tarjetas). El subtítulo
+  del hero es `<p class="sub">`, no un heading.
+- **Movimiento finito:** el carrusel da una vuelta y se queda en la primera foto; la
+  palabra rotante da dos vueltas y se detiene en la palabra ancla (WCAG 2.2.2).
+- Sin estilos inline en el HTML; colores con alfa también son tokens (`--negro-a92`…).
+- El marco púrpura con halo de las etiquetas del portafolio se queda: lo pidió el usuario.
 
 ## Pendientes conocidos
 

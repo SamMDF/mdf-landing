@@ -54,7 +54,11 @@ if (wrap) {
     wrap.insertAdjacentHTML('beforeend',
       SLIDES.slice(1).map(k => `<div class="slide">${pic(k,'',false)}</div>`).join(''));
     slides = [...wrap.children];
-    setInterval(() => setSlide((si + 1) % slides.length), DUR);
+    /* una sola vuelta y se queda en la primera: no hay movimiento indefinido (WCAG 2.2.2) */
+    const iv = setInterval(() => {
+      setSlide((si + 1) % slides.length);
+      if (si === 0) clearInterval(iv);
+    }, DUR);
   };
   if (!reduce) addEventListener('load', startCarousel);
 }
@@ -64,11 +68,13 @@ const rot = document.getElementById('rot');
 if (rot) {
   rot.innerHTML = t.words.map(([w], i) => `<span class="${i ? '' : 'on'}">${w}</span>`).join('');
   const ws = [...rot.children];
-  let wi = 0;
+  let wi = 0, loops = 0;
+  /* dos vueltas y se detiene en la palabra ancla (WCAG 2.2.2) */
   const nextWord = () => {
     ws[wi].classList.remove('on');
     wi = (wi + 1) % ws.length;
     ws[wi].classList.add('on');
+    if (wi === 0 && ++loops >= 2) return;
     setTimeout(nextWord, t.words[wi][1]);
   };
   if (!reduce) setTimeout(nextWord, t.words[0][1]);
@@ -134,6 +140,7 @@ function openLb(kind, ref, title) {
     ? `https://player.vimeo.com/video/${ref}?title=0&byline=0&portrait=0`
     : ref;
   lbFrame.className = 'lb-frame' + (kind === 'site' ? ' site' : kind === 'calendly' ? ' tall' : '');
+  lb.setAttribute('aria-label', kind === 'calendly' ? t.bookTitle : t.dialogLabel);
   lbFrame.innerHTML =
     `<iframe src="${src}" title="${title}" allow="autoplay; fullscreen; picture-in-picture" ` +
     `allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
@@ -155,7 +162,7 @@ const workEl = document.getElementById('work');
 if (workEl) {
   workEl.innerHTML = t.work.map(([k, n, src], i) => {
     const href = src.vimeo ? VR + src.vimeo : src.site;
-    return `<a class="w" href="${href}" target="_blank" rel="noopener" data-i="${i}">${pic(k, n, true)}
+    return `<a class="w" href="${href}" target="_blank" rel="noopener" data-i="${i}">${pic(k, '', true)}
      <span class="tag">${n}</span></a>`;
   }).join('');
   workEl.querySelectorAll('.w').forEach(a => a.addEventListener('click', e => {
@@ -165,6 +172,8 @@ if (workEl) {
   }));
 }
 
-/* botón "Agenda una llamada" / "Book a call" → Calendly en el lightbox */
-const book = document.getElementById('bookCall');
-if (book) book.addEventListener('click', () => openLb('calendly', CALENDLY, t.bookTitle));
+/* todo CTA .js-book es un enlace real a Calendly (funciona sin JS); con JS abre el lightbox */
+document.querySelectorAll('.js-book').forEach(a => {
+  a.href = CALENDLY;
+  a.addEventListener('click', e => { e.preventDefault(); openLb('calendly', CALENDLY, t.bookTitle); });
+});
