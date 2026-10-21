@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tu cliente más difícil — Maestros del Futuro</title>
+<meta name="description" content="Una skill gratuita para Claude que lee lo que dices de tu producto como lo leería el cliente que no sabe de tu tema y no tiene por qué creerte.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://servicios.maestrosdelfuturo.com/cliente-dificil">
+<meta property="og:url" content="https://servicios.maestrosdelfuturo.com/cliente-dificil">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Maestros del Futuro">
+<meta property="og:title" content="Tu cliente más difícil">
+<meta property="og:description" content="Una skill gratuita para Claude: pon tu producto frente al cliente que no sabe de tu tema y no tiene por qué creerte.">
+<meta property="og:image" content="https://servicios.maestrosdelfuturo.com/img/og-es.png">
+<meta name="theme-color" content="#181239">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sofia-pro">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/css/styles.css">
+<style>
+/* ---------- Tu cliente más difícil: estilos propios de esta página ---------- */
+.lm-hero{min-height:auto;padding:calc(var(--s10) + 24px) var(--pad) var(--s9);background:var(--tinta)}
+.lm-hero h1{font-size:clamp(48px,10vw,128px);max-width:11ch}
+.lm-hero h1 em{font-style:normal;color:var(--purpura)}
+.lm-hero .sub{max-width:34ch}
+.lm-actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s5);margin-top:var(--s7)}
+.lm-actions .pill{font-size:17px;padding:16px 30px}
+.lm-meta{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--lavanda);margin:0}
+.lm-hero .sculpt{opacity:.9}
+
+.lm-before{font-weight:500;font-size:clamp(22px,2.8vw,32px);line-height:1.3;letter-spacing:-.01em;
+  color:var(--bruma);max-width:34ch;margin:0}
+.lm-label{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--bruma);margin:0 0 var(--s3)}
+.lm-clients{display:grid;gap:var(--s4);margin:var(--s7) 0}
+@media(min-width:900px){.lm-clients{grid-template-columns:repeat(3,1fr)}}
+.lm-client{background:var(--superficie);padding:var(--s6);display:flex;flex-direction:column;gap:var(--s3)}
+.lm-client h3{margin:0;font-weight:700;font-size:24px;letter-spacing:-.02em;line-height:1.15;color:var(--tinta)}
+.lm-client .who{margin:0;font-size:15px;line-height:1.5;color:var(--bruma)}
+.lm-client blockquote{margin:var(--s3) 0 0;font-size:18px;line-height:1.5;color:var(--tinta)}
+.lm-verdict{align-self:flex-start;margin-top:auto;font:600 14px var(--font);border-radius:var(--r-full);padding:6px 14px;background:var(--ceramica);color:var(--tinta)}
+.lm-verdict.go{background:var(--topacio)}
+.lm-common{font-size:19px;line-height:1.6;color:var(--indigo);max-width:60ch;margin:0 0 var(--s7)}
+.lm-after{background:var(--purpura);color:var(--tinta);padding:var(--s7) var(--s6)}
+.lm-after .lm-label{color:var(--tinta)}
+.lm-after p.q{margin:0;font-weight:700;font-size:clamp(24px,3.4vw,40px);line-height:1.2;letter-spacing:-.02em;max-width:28ch}
+
+.lm-steps{display:grid;gap:var(--s6);margin:0;padding:0;list-style:none;counter-reset:s}
+@media(min-width:900px){.lm-steps{grid-template-columns:repeat(4,1fr)}}
+.lm-steps li{counter-increment:s}
+.lm-steps li::before{content:counter(s);display:grid;place-items:center;width:48px;height:48px;border-radius:50%;
+  background:var(--tinta);color:var(--blanco);font-weight:700;font-size:20px;margin-bottom:var(--s4)}
+.lm-steps h3{margin:0 0 var(--s2);font-weight:700;font-size:22px;letter-spacing:-.02em;line-height:1.2;color:var(--tinta)}
+.lm-steps p{margin:0;font-size:17px;line-height:1.55;color:var(--indigo)}
+
+.lm-install{display:grid;gap:var(--s8)}
+@media(min-width:960px){.lm-install{grid-template-columns:1fr 1fr;gap:var(--s9)}}
+.lm-install ol{margin:0;padding:0;list-style:none;counter-reset:i;display:grid;gap:var(--s5)}
+.lm-install ol li{counter-increment:i;display:grid;grid-template-columns:40px 1fr;gap:var(--s4);font-size:18px;line-height:1.55;color:var(--ceramica)}
+.lm-install ol li::before{content:counter(i);width:36px;height:36px;border-radius:50%;background:var(--purpura);color:var(--tinta);
+  font-weight:700;display:grid;place-items:center}
+.lm-install ol strong{color:var(--blanco)}
+.ui{font:500 14px var(--mono);background:var(--indigo);color:var(--blanco);padding:2px 8px;border-radius:6px;white-space:nowrap}
+.lm-note{font-size:15px;line-height:1.6;color:var(--lavanda);margin:var(--s6) 0 0}
+.lm-dl{background:var(--negro);padding:var(--s7) var(--s6);display:flex;flex-direction:column;gap:var(--s5);align-self:start}
+.lm-dl h3{margin:0;font-weight:700;font-size:28px;letter-spacing:-.02em}
+.lm-dl p{margin:0;color:var(--lavanda);font-size:17px}
+.lm-dl .pill{align-self:flex-start;font-size:17px;padding:16px 30px}
+.lm-say{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;
+  background:var(--tinta);padding:var(--s4) var(--s5);border-radius:12px}
+.lm-say code{font:700 18px var(--font);color:var(--blanco)}
+.lm-copy{font:600 14px var(--font);background:var(--ceramica);color:var(--tinta);border:0;border-radius:var(--r-full);padding:8px 16px;cursor:pointer}
+.lm-pdf{color:var(--ceramica);font-size:15px;text-underline-offset:3px}
+
+main h2.big.sec-title{margin-bottom:var(--s7)}
+.lm-why p,.lm-why li{font-size:18px;line-height:1.7;color:var(--indigo)}
+.lm-why h2{font-weight:700;font-size:clamp(24px,3vw,32px);letter-spacing:-.02em;color:var(--tinta);margin:0 0 var(--s5)}
+.lm-why ul{padding-left:1.1em;margin:0}
+.lm-why li{margin-bottom:var(--s3)}
+.lm-why strong{color:var(--tinta)}
+.lm-src{font-size:14px!important;line-height:1.6!important;color:var(--bruma)!important;margin-top:var(--s4)}
+</style>
+</head>
+<body>
+<a class="skip" href="#hero-h1">Saltar al contenido</a>
+<header id="hd" class="solid">
+  <a class="brand" href="/"><img src="/img/logo-mdf.png" alt="Maestros del Futuro" width="172" height="50"></a>
+  <div class="hd-r">
+    <a class="pill pill-purpura" href="#descarga">Descargar</a>
+  </div>
+</header>
+
+<main>
+<section class="hero lm-hero">
+  <div class="hero-in">
+    <h1 id="hero-h1">Tu cliente <em>más difícil</em></h1>
+    <p class="sub">¿Tu cliente entiende lo que vendes?<br>Ponlo a prueba.</p>
+    <div class="lm-actions">
+      <a class="pill pill-topacio" href="#descarga">Descargar la skill</a>
+      <p class="lm-meta">Gratis · Claude.ai Free, Pro o Max</p>
+    </div>
+  </div>
+  <div class="sculpt" aria-hidden="true"><img src="/img/isotipo-mdf.png" alt=""></div>
+</section>
+
+<section class="block bg-ceramica">
+  <div class="inner">
+    <h2 class="big sec-title">Cómo funciona</h2>
+    <ol class="lm-steps">
+      <li><h3>Cuéntale qué vendes</h3><p>Tu producto en menos de 200 caracteres y quién es tu cliente. Si quieres, también el post o la página que vas a publicar.</p></li>
+      <li><h3>Conoce a tus tres clientes</h3><p>Uno con ganas, uno que duda y uno que no te cree. Ninguno sabe de tu tema.</p></li>
+      <li><h3>Descubre dónde los pierdes</h3><p>La palabra que no entienden, lo que les quita la confianza y la frase exacta en la que se van.</p></li>
+      <li><h3>Pruébales tu nueva versión</h3><p>Platica con cualquiera de los tres y ajusta tu mensaje hasta que se quede.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block bg-tinta" id="descarga">
+  <div class="inner lm-install">
+    <div>
+      <h2 class="big sec-title">Instálala en dos pasos</h2>
+      <ol>
+        <li><span><strong>Descarga el archivo</strong> cliente-dificil.zip y no lo descomprimas.</span></li>
+        <li><span><strong>Súbelo a Claude.</strong> En Claude.ai entra a <span class="ui">Customize › Skills</span>, da clic en <span class="ui">+</span>, luego en <span class="ui">+ Create skill</span> y en <span class="ui">Upload a skill</span>. Elige el archivo.</span></li>
+      </ol>
+      <p class="lm-note">¿No ves la opción de skills? Entra a <span class="ui">Settings › Capabilities</span> y enciende <span class="ui">Code execution and file creation</span>. En cuentas Team o Enterprise, quien administra la cuenta tiene que permitirlas. Si usas Claude Code, copia la carpeta <span class="ui">cliente-dificil</span> en <span class="ui">~/.claude/skills</span>.</p>
+    </div>
+    <div class="lm-dl">
+      <h3>Descárgala</h3>
+      <p>Un archivo .zip de 15 KB. Versión 1.0, octubre de 2026.</p>
+      <a class="pill pill-topacio" href="/descargas/cliente-dificil.zip" download>Descargar cliente-dificil.zip</a>
+      <p>Después abre una conversación nueva en Claude y escribe:</p>
+      <div class="lm-say"><code id="frase">Usa Tu cliente más difícil</code><button class="lm-copy" type="button" data-copy="frase">Copiar</button></div>
+      <a class="lm-pdf" href="/descargas/guia-cliente-dificil.pdf" download>Descargar la guía en PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="block bg-blanco lm-why">
+  <div class="inner two-up">
+    <div>
+      <h2>Por qué funciona</h2>
+      <p>Cuando conoces bien tu producto, crees que cualquiera lo entiende. Es un sesgo que la investigación llama la maldición del conocimiento: lo que para ti es obvio, para tu cliente no lo es.</p>
+      <p>Por eso tus tres clientes revisan lo que cualquier persona mira antes de decidir: <strong>si entiende, si te cree y si le conviene.</strong></p>
+      <p class="lm-src">Basado en estudios sobre cómo la gente entiende, confía y adopta algo nuevo: Camerer y colegas (1989), Friestad y Wright (1994), McKnight y colegas (2002) y Rogers (2003).</p>
+    </div>
+    <div>
+      <h2>Lo que no hace</h2>
+      <ul>
+        <li><strong>No sustituye a personas reales.</strong> Es una simulación para encontrar problemas rápido. Confírmalo con cinco personas parecidas a tu cliente.</li>
+        <li><strong>No sabe de tu producto más de lo que le dices.</strong> Si tu texto no menciona algo, el cliente tampoco lo sabe.</li>
+        <li><strong>No abre todos los enlaces.</strong> Si no puede leer tu página, te pide el texto o una captura.</li>
+        <li><strong>La IA tiende a ser amable.</strong> La skill está hecha para no serlo; si un cliente te suena demasiado convencido, pídele que sea más exigente.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>© 2026 Maestros del Futuro</span>
+  <span>servicios.maestrosdelfuturo.com</span>
+</footer>
+
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=document.getElementById(b.dataset.copy).textContent;
+    (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){
+      b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1800);
+    }).catch(function(){b.textContent='Selecciona y copia'});
+  });
+});
+</script>
+</body>
+</html>
