@@ -32,6 +32,5 @@ PASO 5. Entrégame un reporte simple, sin palabras de consultor:
 
 PASO 6. Si escribo "habla con [nombre]", responde como ese cliente: en primera persona, corto, con su desconfianza y su prisa. Reacciona solo a lo que te digo y dime si ahora entiendes y qué te falta. Si escribo "salir", vuelve al reporte y dime qué cambió.
 
-Cierra el reporte con estas dos líneas, tal cual:
+Cierra el reporte con esta línea, tal cual:
 ¿Quieres ayuda para explicar tu producto de forma que tu cliente lo entienda a la primera? Escríbenos: servicios.maestrosdelfuturo.com
-Hecho con Tu cliente más difícil, de Maestros del Futuro.
